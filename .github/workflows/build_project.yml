@@ -6,15 +6,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v2
-      with:
-        submodules: 'recursive'
-    - name: esp-idf build
-      uses: kumekay/esp-idf-ci-action@feature/specify_idf_version
-      with:
-        esp_idf_version: v4.4
-    - name: esp-idf build
-      uses: kumekay/esp-idf-ci-action@feature/specify_idf_version
-      with:
-        esp_idf_version: v4.4
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          submodules: "recursive"
+      - name: esp-idf build
+        uses: atanisoft/esp-idf-ci-action@main
+        with:
+          esp_idf_version: v4.4
+          target: ESP32-c3
