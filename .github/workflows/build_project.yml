@@ -11,7 +11,8 @@ jobs:
         with:
           submodules: "recursive"
       - name: esp-idf build
-        uses: atanisoft/esp-idf-ci-action@main
+        uses: jdoubleu/esp-idf-ci-action@input-esp-version-adjustment
         with:
           esp_idf_version: v4.4
           target: ESP32-c3
+          path: some/path
