@@ -11,8 +11,9 @@ jobs:
         with:
           submodules: "recursive"
       - name: esp-idf build
-        uses: jdoubleu/esp-idf-ci-action@input-esp-version-adjustment
+        uses: Unit-e/esp-idf-ci-action@add-parameter-action
         with:
           esp_idf_version: v4.4
           target: ESP32-c3
           path: some/path
+          command: idf.py reconfigure
